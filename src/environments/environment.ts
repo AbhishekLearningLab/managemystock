@@ -3,7 +3,9 @@
 // The list of file replacements can be found in `angular.json`.
 
 export const environment = {
-  production: false
+  production: false,
+  baseUrl: "http://localhost",
+  remoteQUrl: "https://opentdb.com/api.php?amount=5&type=multiple"
 };
 
 /*
