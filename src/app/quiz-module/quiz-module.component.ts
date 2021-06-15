@@ -23,12 +23,13 @@ export class QuizModuleComponent implements OnInit {
   start(){
     this.Questions=[];
     this.api.getQuestions().subscribe(async res=>{
-      // let quiz=res["result"];
+      //let quiz=res.json();
       // quiz.forEach(e=>{
       //   e.incorrect_answers.push(e.correct_answer);
       //   e.incorrect_answers.sort(()=>.5 - Math.random());
       // });
       //this.Questions=await quiz;
+      //console.log(quiz);
       this.num=0;
       this.points=0;
     });    
