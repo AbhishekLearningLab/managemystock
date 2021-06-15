@@ -8,7 +8,7 @@ import { MainService } from '../../core/services/main.service';
 })
 export class QuizModuleComponent implements OnInit {
 
-  Questions=[];
+  Questions: any;
   res: Object=Object;
   IsAnswerCorrect=false;
   points=0;
@@ -23,19 +23,13 @@ export class QuizModuleComponent implements OnInit {
   start(){
     this.Questions=[];
     this.api.getQuestions().subscribe(async res=>{
-      //let quiz=res.json();
-      // quiz.forEach(e=>{
-      //   e.incorrect_answers.push(e.correct_answer);
-      //   e.incorrect_answers.sort(()=>.5 - Math.random());
-      // });
-      //this.Questions=await quiz;
-      //console.log(quiz);
+      
       this.num=0;
       this.points=0;
     });    
   }
 
-  checkAnswer(correctAnswer:string, useranswer: string)
+  checkAnswer(correctAnswer:string, useranswer: string): void
   {
     this.IsAnswerCorrect= correctAnswer == useranswer ? true : false;
     this.IsAnswerCorrect ? this.points += 10 : this.points -= 5;
